@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Quiz Creator</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+  .hidden {
+    display: none;
+  }
+  </style>
+</head>
+<body>
+
+	<div class="container">
+	  <div class="row align-items-center">
+	    <div class="col col-lg-12">
+        <h1>Create Quiz</h1>
+
+        <div class="alert alert-success hidden">
+        Item created!
+        </div>
+
+				<form method="POST" action="/save-item">
+          <div class="form-group">
+            <label for="question">Question</label>
+            <input type="text" id="question" name="question" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label for="option_a">Option A</label>
+            <input type="text" id="option_a" name="option_a" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label for="option_b">Option B</label>
+            <input type="text" id="option_b" name="option_b" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label for="option_c">Option C</label>
+            <input type="text" id="option_c" name="option_c" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label for="option_d">Option D</label>
+            <input type="text" id="option_d" name="option_d" class="form-control" required>
+          </div>
+
+          Correct Answer
+
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="answer" id="correct_a" value="A">
+              <label class="form-check-label" for="correct_a">
+                A
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="answer" id="correct_b" value="B">
+              <label class="form-check-label" for="correct_b">
+                B
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="answer" id="correct_c" value="C">
+              <label class="form-check-label" for="correct_c">
+                C
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="answer" id="correct_d" value="D">
+              <label class="form-check-label" for="correct_d">
+                D
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Save Item</button>
+				</form>
+			</div>
+
+    </div>
+
+	</div>
+
+  <script>
+    if (window.location.hash) {
+      document.querySelector('.alert').classList.remove('hidden');
+    }
+  </script>
+
+</body>
+</html>
